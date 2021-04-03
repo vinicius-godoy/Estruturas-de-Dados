@@ -5,18 +5,18 @@ template <typename Tipo>
 
 class Fila{
 private:
-    Tipo *v;  // Ponteiro de dado do tipo definido pelo main
+    Tipo *v; // Ponteiro para dado do template da classe
     int fim;
     int inicio;
     unsigned tamanho;
     unsigned qtd; // Quantidade
 public:
     //Construtor
-    Fila(unsigned tam){ // Inicia a fila com array de tamanho definido, quantidade 0, inicio 0 e fim -1
-        tamanho = tam;
-        fim = -1; inicio = 0;
-        qtd = 0;
-        v = new Tipo[tamanho];
+    Fila(unsigned tam){
+        tamanho = tam; // Tamanho definido pelo usuário passado por parâmetro
+        fim = -1; inicio = 0; // Fim começa como -1 e início como 0
+        qtd = 0; // Quantidade começa com 0 
+        v = new Tipo[tamanho]; // Ponteiro aponta para um array de tamanho definido pelo usuário
     }
 
     //Destrutor
@@ -25,17 +25,17 @@ public:
     }
 
     //Métodos
-    void insere(Tipo x){ 
-        fim++; qtd++; // Incrementa o fim e a quantidade
-        if(fim == tamanho){fim = 0;} // Se o fim chegar ao final ele circula pro começo
-        v[fim] = x; // Adiciona o dado no array
+    void insere(Tipo x){
+        fim++; qtd++; // Incrementa fim e quantidade
+        if(fim == tamanho){fim = 0;} // Se o fim chegar ao fim do array, ele circula pro começo
+        v[fim] = x; // Adiciona dado ao array
     }
     Tipo exclui(){
-        Tipo temp = v[inicio]; // Variável temporária que salva o dado que vai ser removido
-        inicio++; qtd--; // Incrementa o início e diminui a quantidade
-        if(inicio == tamanho){inicio = 0;} // Se o início chegar ao final do array de fila ele circula pro começo
+        Tipo temp = v[inicio]; // Variável temporária para guardar dado que será removido
+        inicio++; qtd--; // Incrementa início e decrementa quantidade
+        if(inicio == tamanho){inicio = 0;} // Se o início chegar ao fim do array, ele circula pro começo
 
-        return temp; // Retorna o dado removido da fila
+        return temp; // Retorna dado removido
     }
     bool cheia(){
         return qtd == tamanho;
