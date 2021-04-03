@@ -3,5 +3,5 @@ Headers de classes de estruturas de dados para C++ usando alocação sequencial 
 
 ## Pilha:
 
-![Imagem de Pilha em C++](C:\Users\CLIENTE\Desktop\Vinicius\Git Clone\Estruturas-de-Dados\imgs\Pilha-C++.png)
+![Imagem de Pilha em C++](https://raw.githubusercontent.com/vinicius-godoy/Estruturas-de-Dados/main/imgs/Pilha-C%2B%2B.png)
 
